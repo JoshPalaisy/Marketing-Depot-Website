@@ -30,10 +30,10 @@ passport.use(new FacebookStrategy({
                 console.log(err);
                 return res.render("register");
             }
-            passport.authenticate("facebook")(req, res, function(){
-               res.redirect("/");
+            passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res){
+              console.log("User logged in:" + newUser);
+              res.redirect("/");
             });
-        });
       }
     });
   }
