@@ -1,0 +1,29 @@
+<% include ../partials/head %>
+
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-lg-12 text-center login-form">
+        <p>
+          <img class="auth-logo" src="images/md-icon.png" height="100px !important"></img>
+          </br>
+        <form action="/login" method="post">
+          <div class="form-group">
+            <input class="form-control" type="text" name="username" id="username" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+          </div>
+          <button class="btn btn-primary btn-block" type="sumbit" name="submit" id="submit" value="Submit">Login</button>
+        </form>
+        <div xmlns="http://www.w3.org/1999/xhtml" class="thirdparty-line">
+          <span>Or</span>
+        </div>
+        <a href="/oauth/facebook/login" class="btn btn-primary btn-block"><i class="fa fa-facebook-square"></i> &nbsp; &nbsp;Login with Facebook</a></br>
+        <div><a class="login-text-link text-center" href="/register"><p class="login-text-link">Create a free Marketing Depot account</p></a></div>
+        <div><a class="login-text-link text-center" href="/register"><p class="login-text-link">Can't login?</p></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include ../partials/login-footer %>

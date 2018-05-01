@@ -1,0 +1,49 @@
+<% include ../partials/head %>
+<div class="container register-container">
+  <div class="row">
+    <div class="col-lg-12 text-center register-form">
+      <p>
+        <img class="auth-logo" src="images/md-icon.png" height="100px !important"></img>
+        </br>
+      </p>
+      <div class="col-md-12">
+        <h1>Create an account</h1>
+      </br>
+      </div>
+      <form action="/register" method="POST">
+        <fieldset>
+          <div class="form-group">
+            <select class="form-control" id="registerCountrySelect" name="country" placeholder="Country">
+               <option value="Canada">Canada</option>
+               <option value="USA">USA</option>
+             </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" name="first_name" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" type="text" name="last_name" placeholder="Last Name">
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="form-group">
+            <input class="form-control" type="text" name="username" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="password">
+          </div>
+        </fieldset>
+        <div class="form-check text-left checkbox checkbox-primary">
+          <input class="form-check-input" type="checkbox" name="news_offers_optin" value="" id="news-offers-optin" checked="checked">
+          <label class="form-check-label" for="news-offers-optin">Recieve news and special offers</label>
+        </div>
+        </br>
+        <button class="btn btn btn-primary btn-block">Create a free accout</button>
+        <a id="register-cancel-button" class="btn btn btn-primary btn-block" href="/login">Already have an account?</a>
+      </form>
+    </div>
+  </div>
+</div>
+<% include ../partials/login-footer %>

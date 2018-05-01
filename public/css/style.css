@@ -1,0 +1,515 @@
+body {
+  background-color: #410a89 !important;
+  color: rgba(255,255,255,.7) !important;
+  font-family: 'Lato', sans-serif !important;
+  height: 100% !important;
+  min-height: 100% !important;
+}
+.btn-primary {
+  background-color: #702DC4 !important;
+  color: rgba(255,255,255,.7) !important;
+  border-radius: 2px !important;
+  border: 1px solid #A476DE !important;
+}
+
+.navbar {
+  max-height: 60px !important;
+  min-height: 60px !important;
+  background: rgba(255, 255, 255, .05) !important;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.15) !important;
+  transition: 0.3s background ease;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+.navbar-brand {
+  width: 60px !important;
+  height: 60px !important;
+  padding: 0px !important;
+  /* margin-left: -15px !important; */
+}
+
+.main-menu {
+  text-transform: uppercase !important;
+  margin-top: 0 !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+}
+
+a {
+  color: rgba(255, 255, 255, .7) !important;
+}
+
+a:hover {
+  color: #fff !important;
+}
+
+.account-menu {
+  text-transform: none !important;
+  margin-top: 0 !important;
+  font-weight: 400 !important;
+  font-size: 17px !important;
+}
+
+.software-container {
+  padding-top: 60px !important;
+  padding-right: 40px !important;
+  padding-bottom: 60px !important;
+  padding-left: 40px !important;
+  background: #410988 url(https://www.marketingdepot.ca/wp-content/uploads/software-background.jpg) !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+}
+
+.software-grid {
+  padding-left: 25px !important;
+  padding-right: 35px !important;
+}
+
+.software-box {
+  border: 1px solid #6b6b6b !important;
+  height: 250px !important;
+  background-size: cover !important;
+  background-position: top center !important;
+}
+
+.software-grid-soon {
+  border-left: 1px solid !important;
+  border-color: rgba(255, 255, 255, .15) !important;
+  padding-left: 35px !important;
+  padding-right: 25px !important;
+}
+
+.news-container {
+  padding-top: 80px !important;
+  padding-right: 40px !important;
+  padding-bottom: 80px !important;
+  padding-left: 40px !important;
+  background: #383838 url(https://www.marketingdepot.ca/wp-content/uploads/footer-bg-base-1.jpg) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.view-all-news {
+  color: #6f2cc4;
+  text-decoration: none;
+  transition: color .2s;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+.news-heading-both {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none !important;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 992px) {
+  .login-form {
+    max-width: 100% !important;
+  }
+
+}
+@media screen and (min-width: 993px) {
+  .login-form {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 360px !important;
+  }
+  .register-form {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 500px !important;
+  }
+
+}
+.login-form {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.login-container {
+  margin-top: 100px !important;
+}
+.register-container {
+  margin-top: 100px !important;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 10px !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  vertical-align: middle !important;
+  height: 34px !important;
+  color: rgba(255,255,255,0.7) !important;
+  background-color: rgba(0,0,0,0.5) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+  border-radius: 2px !important;
+  transition: border-color .15s ease-in-out,box-shadow .15s
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+
+#footer {
+  background-size: cover !important;
+  bottom: 0 !important;
+  position: relative !important;
+  right: 0 !important;
+  left: 0 !important;
+  background-image: url(https://www.marketingdepot.ca/wp-content/uploads/footer-background-3.jpg) !important;
+  background-color: #410a89 !important;
+  background-repeat: no-repeat !important;
+}
+
+.empty-space-80 {
+  height: 80px;
+}
+
+.empty-space-20 {
+  height: 20px;
+}
+
+#register-cancel-button {
+  border-radius: 2px !important;
+  background-color: rgba(0,0,0,.4) !important;
+  border: 1px solid #702DC4 !important;
+  color: #702DC4 !important;
+}
+#register-cancel-button:hover {
+  background-color: rgba(0,0,0,.5) !important;
+  border: 1px solid #A476DE !important;
+  color: #A476DE !important;
+}
+
+input[type=checkbox]:checked {
+  color: #f00;
+  font-style: normal;
+  background: #000 !important;
+}
+
+.carousel-control-prev {
+  width: 5% !important;
+}
+.carousel-control-next {
+  width: 5% !important;
+}
+
+.news-featured-card {
+    display: inline-block !important;
+    background-color: rgba(0,0,0,.3) !important;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: 100% !important;
+    height: 336px !important;
+}
+.news-featured-card-img-top {
+  width: 100% !important;
+  float: right !important;
+  height: 100% !important;
+  background-size: cover !important;
+  transform: scale(1.0);
+  background-position: center;
+  overflow: hidden;
+  transition: all .5s cubic-bezier(0,0,0,1.15);
+}
+.news-featured-card-img-top:hover {
+  transform: scale(1.1) !important;
+}
+.news-featured-card-body {
+  width: 34% !important;
+  float: left !important;
+}
+
+.card-img-wrapper-top {
+  display: inline !important;
+  width: 66% !important;
+  float: right !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+.secondary-card-body {
+  min-height: 200px !important;
+}
+
+#featured-news-home-top {
+  height: 336px !important;
+  width: auto !important;
+  display: block !important;
+  border: 1px solid rgba(255,255,255,.05) !important;
+}
+
+#featured-news-home-top:hover {
+  background-color: rgba(255,255,255,.05) !important;
+  border: 1px solid rgba(255,255,255,.1) !important;
+}
+
+.news-card-img-top {
+  width: 100% !important;
+  float: right !important;
+  height: 137px !important;
+  background-size: cover !important;
+  transform: scale(1.0);
+  background-position: center;
+  overflow: hidden !important;
+  transition: all .5s cubic-bezier(0,0,0,1.15);
+}
+.news-card-img-top:hover {
+  transform: scale(1.1) !important;
+}
+.card-img-wrapper-bottom {
+  display: block !important;
+  width: 100% !important;
+  height: 137px !important;
+  overflow: hidden !important;
+}
+.card-img-wrapper-bottom:hover {
+  display: block !important;
+  width: 100% !important;
+  height: 137px !important;
+  overflow: hidden !important;
+}
+
+#featured-news-home-bottom {
+  height: 336px !important;
+  width: auto !important;
+  display: block !important;
+  border: 1px solid rgba(255,255,255,.05) !important;
+}
+
+#featured-news-home-bottom:hover {
+  background-color: rgba(255,255,255,.05) !important;
+  border: 1px solid rgba(255,255,255,.1) !important;
+}
+
+.home-events-list {
+  border-top-width: 1px !important;
+  border-bottom-width: 1px !important;
+  border-top-color: rgba(255,255,255,0.15) !important;
+  border-top-style: solid !important;
+  border-bottom-color: rgba(255,255,255,0.15) !important;
+  border-bottom-style: solid !important;
+  display: block !important;
+  height: 150px !important;
+  padding: 0px !important;
+}
+
+.home-events-list-date {
+  font-size: 24px;
+  color: #dd9933;
+  line-height: 1.7;
+  text-align: left;
+  padding: 10px;
+}
+
+#events-list-item {
+  height: 150px !important;
+  width: 100% !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+
+}
+
+#events-list-item:hover {
+  background-color: rgba(255,255,255,.05) !important;
+}
+
+.d-block {
+  position: relative;
+  animation-name: slider !important;
+  -webkit-animation-duration: 5500ms;
+  animation-duration: 5500ms;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+/* @-webkit-keyframes slider {
+    from {left: 60px;}
+    to {left: 100px;}
+}
+
+@keyframes slider {
+    from {right: 60px;}
+    to {right: 100px;}
+} */
+@keyframes slider {
+  0% {
+      -webkit-transform: translateX(120px) rotate(0.01deg);
+              transform: translateX(120px) rotate(0.01deg);
+      opacity: 0;
+      /* transform: scale(1.3) !important; */
+    }
+    9.0909% {
+      -webkit-transform: translateX(20px) rotate(0.01deg);
+              transform: translateX(20px) rotate(0.01deg);
+      opacity: 1;
+      /* transform: scale(1.3) !important; */
+     }
+    100% {
+      -webkit-transform: translateX(0) rotate(0.01deg);
+              transform: translateX(0) rotate(0.01deg);
+      opacity: 1;
+      /* transform: scale(1.3) !important; */
+     }
+}
+
+
+
+
+
+
+
+
+.slider-content-pane {
+  height: 100% !important;
+  width: 115vw !important;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+  top: 0 !important;
+  position: absolute !important;
+}
+
+.slider-caption {
+  text-transform: uppercase !important;
+  line-height: 60px !important;
+  font-weight: 700 !important;
+  font-size: 60px !important;
+}
+
+.carousel-indicators li {
+  width: 80px !important;
+  height: 5px !important;
+}
+.carousel-indicators .active {
+  background-color: #702DC4 !important;
+}
+
+.login-text-link {
+  text-decoration: none !important;
+}
+
+.new-post-content-area {
+  min-height: 350px !important;
+}
+
+.new-post-description {
+  min-height: 100px !important;
+}
+
+.news-top-container {
+  margin-top: -80px !important;
+  padding-top: 80px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  border-bottom: 1px solid rgba(255,255,255,.3) !important;
+  background: linear-gradient(0deg,rgba(0,0,0,.2) 0,transparent);
+}
+
+.news-top-gallery {
+  padding-top: 60px !important;
+  padding-bottom: 40px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+.recent-news-list {
+  display: block !important;
+  height: auto !important;
+  padding: 0px !important;
+}
+
+.news-sidebar-image {
+  top: 15px;
+  left: 15px;
+  width: 80px;
+  height: 50px;
+  position: relative;
+}
+.news-sidebar-item {
+  width: 350px !important;
+  border-top-width: 1px !important;
+  border-bottom-width: 1px !important;
+  border-top-color: rgba(255,255,255,0.15) !important;
+  border-top-style: solid !important;
+  border-bottom-color: rgba(255,255,255,0.15) !important;
+  border-bottom-style: solid !important;
+  display: block !important;
+  height: auto !important;
+  padding: 0px !important;
+}
+
+#news-sidebar-item {
+  height: auto !important;
+  width: 100% !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+}
+
+#news-sidebar-item:hover {
+  background-color: rgba(255,255,255,.05) !important;
+}
+
+#recent-news-item {
+  height: 150px !important;
+  width: 100% !important;
+  transform: scale(1) !important;
+  text-decoration: none !important;
+  border-top-width: 1px !important;
+  border-bottom-width: 1px !important;
+  border-top-color: rgba(255,255,255,0.15) !important;
+  border-top-style: solid !important;
+  border-bottom-color: rgba(255,255,255,0.15) !important;
+  border-bottom-style: solid !important;
+  display: inline-flex !important;
+  transition: background-color .2s,border-color .2s;
+}
+
+#recent-news-item:hover {
+  background-color: rgba(255,255,255,.05) !important;
+  transform: scale(1.01) !important;
+  padding-left: 30px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.thirdparty-line {
+  font-size: 13px;
+  color: rgba(255,255,255,.3);
+  text-transform: uppercase;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 12px 0 12px;
+}
+.thirdparty-line span:before {
+  width: 500px;
+  content: "";
+  height: 1px;
+  background-color: #fff;
+  background-color: rgba(255,255,255,.1);
+  /* position: absolute; */
+  top: 50%;
+}
+.thirdparty-line span:after {
+  width: 500px;
+  content: "";
+  height: 1px;
+  background-color: #fff;
+  background-color: rgba(255,255,255,.1);
+  /* position: absolute; */
+  top: 50%;
+}

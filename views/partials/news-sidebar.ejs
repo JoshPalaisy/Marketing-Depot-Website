@@ -1,0 +1,17 @@
+<aside class="col-sm-12 col-md-4 col-lg-4" style="background: rgba(255,255,255,.05) !important;padding:0px !important;">
+  <% var recentPost = posts.reverse();
+     recentPost.forEach(function(recentPost){ %>
+  <div class="col-sm-12 news-sidebar-item">
+    <a id="news-sidebar-item" href="/news/<%= recentPost._id %>" style="height: auto !important;">
+      <div class="col-sm-4" style="padding: 5px; height: auto !important;">
+        <div class="news-sidebar-image" style="overflow: hidden !important; background-size: cover !important; background: url(<%= recentPost.image %>) center center no-repeat !important;" alt=""></div>
+      </div>
+      <div class="col-sm-8" style="padding: 5px;height: auto !important">
+        <p style="margin-bottom:0px;"><%= recentPost.category %></p>
+        <p class="text-white" style="margin-bottom:0px;"><%= recentPost.title.substring(0, 50) %></0>
+        <p style="margin-bottom:0px;"><small><%= recentPost.date.toDateString() %></small></p>
+      </div>
+    </a>
+  </div>
+  <% }); %>
+</aside>
