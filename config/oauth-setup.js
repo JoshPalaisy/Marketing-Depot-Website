@@ -6,7 +6,7 @@ var Users = require("../models/user");
 passport.use(new FacebookStrategy({
     clientID: keys.facebook.clientID,
     clientSecret: keys.facebook.clientSecret,
-    callbackURL: "https://marketingdepot.herokuapp.com/auth/facebook/redirect"
+    callbackURL: "https://marketingdepot.herokuapp.com/oauth/facebook/redirect"
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
