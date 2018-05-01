@@ -50,6 +50,6 @@ app.use(postRoutes);
 app.use("/oauth", oauthFacebookRoutes);
 
 // Run Server
-app.listen(3300, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
   console.log("Server is running fast.......")
 })
