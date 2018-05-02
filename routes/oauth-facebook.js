@@ -5,7 +5,7 @@ var User = require("../models/user");
 
 //  request facebook login info
 router.get("/facebook/login", passport.authenticate("facebook", {
-  scope:  ["public_profile"]
+  scope:  ["public_profile", "email"]
 }));
 
 //  callback route for facebook to redirect to
