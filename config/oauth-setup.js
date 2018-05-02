@@ -8,7 +8,11 @@ passport.use(new FacebookStrategy({
      // pull in our app id and secret from our auth.js file
      clientID        : keys.facebook.clientID,
      clientSecret    : keys.facebook.clientSecret,
-     callbackURL     : keys.facebook.callbackURI
+     callbackURL     : keys.facebook.callbackURI,
+     profileURL: 'https://graph.facebook.com/v2.10/me',
+     authorizationURL: 'https://www.facebook.com/v2.10/dialog/oauth',
+     tokenURL: 'https://graph.facebook.com/v2.10/oauth/access_token',
+     profileFields: ['email','first_name','last_name','gender','link']
 
  },
 
