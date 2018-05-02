@@ -3,32 +3,44 @@ var FacebookStrategy = require("passport-facebook").Strategy;
 var keys = require("./keys");
 var User = require("../models/user");
 
-passport.use(new FacebookStrategy({
-  clientID: keys.facebook.clientID,
-  clientSecret: keys.facebook.clientSecret,
-  callbackURL: "https://marketingdepot.herokuapp.com/oauth/facebook/redirect"
-  },
-  function(req, accessToken, refreshToken, profile, done) {
-      if (req.user) {
-        User.findOne({
-          username: req.user.username
-        }, function(err, user) {
-          if (err) { return done(err); }
-          user.facebookId = profile.id;
-          user.facebookToken = accessToken;
-          user.first_name = profile.first_name;
-          user.last_name = profile.last_name;
-          user.email = profile.email;
-          user.username = profile.username;
-          user.save();
-          return done(null, user);
-        });
-      }
-      else{
-        console.log("attempted facebook auth from non-logged in user");
-        return done(null, null);
-      }
-    }
-  ));
+// =========================================================================
+ // FACEBOOK ================================================================
+ // =========================================================================
+ passport.use(new FacebookStrategy({
 
-module.exports = passport;
+     // pull in our app id and secret from our auth.js file
+     clientID        : keys.facebook.clientID,
+     clientSecret    : keys.facebook.clientSecret,
+     callbackURL     : keys.facebook.callbackURI
+
+ },
+
+ // facebook will send back the token and profile
+ function(token, refreshToken, profile, done) {
+     process.nextTick(function() {
+         User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
+             if (err)
+                 return done(err);
+             if (user) {
+                 return done(null, user);
+             } else {
+                 var newUser = new User();
+                 newUser.facebook.id    = profile.id; // set the users facebook id
+                 newUser.facebook.token = token; // we will save the token that facebook provides to the user
+                 newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
+                 newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+
+                 // save our user to the database
+                 newUser.save(function(err) {
+                     if (err)
+                         throw err;
+
+                     // if successful, return the new user
+                     return done(null, newUser);
+                 });
+             }
+
+         });
+     });
+
+ }));
