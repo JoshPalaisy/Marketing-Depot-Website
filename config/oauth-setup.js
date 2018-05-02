@@ -1,7 +1,7 @@
 var passport = require("passport");
 var FacebookStrategy = require("passport-facebook");
 var keys = require("./keys");
-var Users = require("../models/user");
+var User = require("../models/user");
 
 passport.use(new FacebookStrategy({
     clientID: keys.facebook.clientID,
