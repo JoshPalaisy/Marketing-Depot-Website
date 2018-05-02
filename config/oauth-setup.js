@@ -3,10 +3,7 @@ var FacebookStrategy = require("passport-facebook").Strategy;
 var keys = require("./keys");
 var User = require("../models/user");
 
-// =========================================================================
- // FACEBOOK ================================================================
- // =========================================================================
- passport.use(new FacebookStrategy({
+passport.use(new FacebookStrategy({
 
      // pull in our app id and secret from our auth.js file
      clientID        : keys.facebook.clientID,
@@ -27,7 +24,7 @@ var User = require("../models/user");
                  var newUser = new User();
                  newUser.facebook.id    = profile.id; // set the users facebook id
                  newUser.facebook.token = token; // we will save the token that facebook provides to the user
-                 newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
+                 newUser.facebook.name  = profile.first_name; // look at the passport user profile to see how names are returned
                  newUser.facebook.email = profile.email; // facebook can return multiple emails so we'll take the first
 
                  // save our user to the database
