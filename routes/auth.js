@@ -33,7 +33,7 @@ router.post("/register", function(req, res){
             password_confirmation: req.body.password
 	    };
         var request = require('request');
-	    request.post({url: 'https://probuilder.marketingdepot.ca/api-subscribe/api-subscribe', formData: newUserData}, function (err, httpResponse, body) {
+	    request.post({url: 'https://probuilder.marketingdepot.ca/api-subscribe', formData: newUserData}, function (err, httpResponse, body) {
 	        if(err){
 	            console.log(err);
 	        }
