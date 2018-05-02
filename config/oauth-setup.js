@@ -20,7 +20,10 @@ passport.use(new FacebookStrategy({
           last_name: profile.last_name,
           facebookId: profile.id
         }).save().then((newUser, function(req, res){
-          console.log("New user created:" + newUser)
+          console.log("New user created:" + newUser);
+          passport.authenticate("local")(req, res, function() {
+            res.redirect("/");
+            });
         }));
       }
     });
