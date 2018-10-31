@@ -1,0 +1,20 @@
+<div class="purchase-container row">
+  <div class="col-sm-12 col-md-12 col-lg-12 ">
+    <h2 style="margin-top: 40px;"><%= software.name %></h2>
+    <h5><%= software.category %></h5>
+    <hr style="border-color: rgba(0,0,0,.2) !important;">
+      <% if(software.price < 0.01){ %>
+      <form action="/shop/checkout/pay/<%= software._id %>" method="GET">
+        <input type="submit" class="btn btn-lg btn-primary btn-buynow" value="Use Free">
+      </form>
+      <% } else { %>
+        <span style="display: inline-flex !important">
+          <h2>USD</h2><h2><%= software.price %></h2><h2>/month</h2>
+        </span>
+        <form action="/shop/checkout/pay/<%= software._id %>" method="GET">
+          <input type="submit" class="btn btn-lg btn-primary btn-buynow" value="Buy Now">
+        </form>
+      <% }; %>
+
+  </div>
+</div>

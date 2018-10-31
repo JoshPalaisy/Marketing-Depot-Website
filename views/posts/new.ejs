@@ -1,11 +1,15 @@
-<% include ../partials/header %>
+<% include ../partials/header-admin %>
 <div class="container-fluid p-5" style="background: url(/images/checkout-bg.jpg) top center no-repeat;margin-top:-80px;">
   <div class="container p-5">
       <h1 class="text-center">New Post</h1>
-      <form action="/news" method="POST" style="max-width: 800px !important;margin-left:auto !important;margin-right:auto !important;">
+      <form action="/news/publish" method="POST" style="max-width: 800px !important;margin-left:auto !important;margin-right:auto !important;">
         <fieldset class="form-group">
           <label>Title</label>
           <input class="form-control" type="text" name="post[title]" placeholder="Post Title">
+        </fieldset>
+        <fieldset class="form-group">
+          <label>URL Slug</label>
+          <input class="form-control" type="text" name="post[url_slug]" placeholder="URL Slug">
         </fieldset>
         <fieldset class="form-group">
           <label for="postCategories">Post Category</label>
@@ -43,4 +47,4 @@
       </form>
   </div>
 </div>
-<% include ../partials/main-footer %>
+<% include ../partials/footer-admin %>

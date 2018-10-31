@@ -1,0 +1,70 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+<div class="container-fluid" style="padding-left: 16rem !important;">
+  <form action="/admin/posts/update/<%= post.id %>?_method=PUT" method="POST">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="empty-space-20"></div>
+      <h1>Edit Post<a class="btn btn-primary btn-sm" style="margin-left:10px;" href="/admin/posts/new">Add New</a></h1>
+      <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %>
+      <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert"><%= success %>  <a class="text-dark" style="text-decoration: underline !important;font-weight: 600 !important;" href="/news/<%= post.url_slug %>" target="_blank">View Post</a></div>
+      <% } %>
+    </div>
+    <div class="col-sm-9" style="padding: 0px !important;">
+        <fieldset class="form-group">
+          <input class="form-control" type="text" maxlength="60" name="post[title]" placeholder="Post Title" value="<%= post.title %>" style="height:50px !important;font-size:22px !important;">
+        </fieldset>
+        <div class="ui fluid labeled input" style="margin-left:1rem !important;margin-right:1rem !important;">
+          <div class="ui label" style="border: none !important;">
+            http://marketingdepot.ca/news/
+          </div>
+          <input type="text" name="post[url_slug]" placeholder="url-slug-here" value="<%= post.url_slug %>" style="border: none !important;">
+        </div>
+        <fieldset class="form=group" style="margin-top: 35px !important;">
+          <textarea id="main-content" class="form-control new-post-content-area" name="post[content]"><%= post.content %></textarea></br>
+        </fieldset>
+        <fieldset class="form=group">
+          <label>Post Descripton</label>
+          <textarea class="form-control new-post-description" name="post[description]" placeholder="SEO Post Description"><%= post.description %></textarea></br>
+        </fieldset>
+    </div>
+    <div class="col-sm-3">
+      <fieldset>
+        <input class="btn btn-primary btn-block p-3" type="submit" value="Update">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="postCategories">Post Category</label>
+        <select class="form-control" name="post[category]" id="postCategories" value="<%= post.category %>">
+          <option value="News">News</option>
+          <option value="Pro Builder">Pro Builder</option>
+          <option value="Pro Leads">Pro Leads</option>
+          <option value="WatchTower">WatchTower</option>
+          <option value="MD Phones">MD Phones</option>
+        </select>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="postCategories">Is Featured?</label>
+        <select class="form-control" name="post[isFeatured]" id="postIsFeatured" value="<%= post.isFeatured %>">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Author</label>
+        <input class="form-control" type="text" name="post[author]" placeholder="Post Author" value="<%= post.author %>">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Featured Image</label>
+        <input class="form-control" type="text" name="post[image]" placeholder="Featured Image (URL only)" value="<%= post.image %>">
+      </fieldset>
+    </div>
+  </div>
+</form>
+</div>
+<script type="text/javascript">
+  var editor = textboxio.replace('#main-content');
+</script>
+<% include ../partials/footer-admin %>

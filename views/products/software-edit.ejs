@@ -1,0 +1,148 @@
+<% include ../partials/header-admin %>
+<div class="container-fluid p-5" style="background: url(/images/checkout-bg.jpg) top center no-repeat;margin-top:-80px;">
+  <div class="container p-5">
+      <h1 class="text-center">Edit <%= software.name %></h1>
+      <form action="/shop/product/<%= software._id %>?_method=PUT" method="POST" style="max-width: 800px !important;margin-left:auto !important;margin-right:auto !important;">
+        <fieldset class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="software[name]" placeholder="Product Name" value="<%= software.name %>">
+        </fieldset>
+        <fieldset class="form-group">
+          <label>URL Slug</label>
+          <input class="form-control" type="text" name="software[url_slug]" placeholder="URL Slug">
+        </fieldset>
+        <fieldset class="form-group">
+          <label>Category</label>
+          <input class="form-control" type="text" name="software[category]" placeholder="Product Category" value="<%= software.category %>">
+        </fieldset>
+        <div class="row" style="padding: 0px !important;">
+          <div class="col-sm-6" style="padding-left: 0px !important;">
+            <fieldset class="form-group">
+              <label>Logo</label>
+              <input class="form-control" type="text" name="software[logo]" placeholder="Product Logo URL" value="<%= software.logo %>">
+            </fieldset>
+          </div>
+          <div class="col-sm-6" style="padding-right: 0px !important;">
+            <fieldset class="form-group">
+              <label>Icon</label>
+              <input class="form-control" type="text" name="software[icon]" placeholder="Product Icon URL" value="<%= software.icon %>">
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" style="padding: 0px !important;">
+          <div class="col-sm-6" style="padding-left: 0px !important;">
+            <fieldset class="form-group">
+              <label>Price</label>
+              <input class="form-control" type="text" name="software[price]" placeholder="Product price per month" value="<%= software.price %>">
+            </fieldset>
+          </div>
+          <div class="col-sm-6" style="padding-right: 0px !important;">
+            <fieldset class="form-group">
+              <label>Paid Product?</label>
+              <input class="form-control" type="checkbox" name="software[isPaid]" value="<%= software.isPaid %>" placeholder="Product is a subscription product">
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" style="padding: 0px !important;">
+          <div class="col-sm-6" style="padding-left: 0px !important;">
+            <fieldset class="form-group">
+              <label>Banner Image</label>
+              <input class="form-control" type="text" name="software[mainBg]" placeholder="Banner background image URL" value="<%= software.mainBg %>">
+            </fieldset>
+          </div>
+          <div class="col-sm-6" style="padding-right: 0px !important;">
+            <fieldset class="form-group">
+              <label>Checkout Image</label>
+              <input class="form-control" type="text" name="software[checkoutBg]" placeholder="Checkout page image URL" value="<%= software.checkoutBg %>">
+            </fieldset>
+          </div>
+        </div>
+        <fieldset class="form-group">
+          <label>Description Title</label>
+          <input type="text" class="form-control" name="software[descriptionTitle]" placeholder="Description Title" value="<%= software.descriptionTitle %>">
+        </fieldset>
+        <fieldset class="form-group">
+          <label>Description</label>
+          <textarea class="form-control" name="software[description]" placeholder="Description" style="min-height:100px !important;"><%= software.description %></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+          <label>Feature Title</label>
+          <input type="text" class="form-control" name="software[featureTitle]" placeholder="Feature Title" value="<%= software.featureTitle %>">
+        </fieldset>
+        <div class="row" style="padding:0px !important;">
+          <div class="col-sm-4">
+            <fieldset class="form-group">
+              <label>Feature 1 Image</label>
+              <input type="text" class="form-control" name="software[feature1img]" placeholder="Feature 1 Image URL" value="<%= software.feature1img %>">
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Feature 1 Title</label>
+              <input type="text" class="form-control" name="software[feature1title]" placeholder="Feature 1 Title" value="<%= software.feature1title %>">
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Feature 1 Description</label>
+              <textarea class="form-control" name="software[feature1description]" placeholder="Feature 1 Description" style="min-height:200px !important;"><%= software.feature1description %></textarea>
+            </fieldset>
+          </div>
+          <div class="col-sm-4">
+            <fieldset class="form-group">
+              <label>Feature 2 Image</label>
+              <input type="text" class="form-control" name="software[feature2img]" placeholder="Feature 2 Image URL" value="<%= software.feature2img %>">
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Feature 2 Title</label>
+              <input type="text" class="form-control" name="software[feature2title]" placeholder="Feature 2 Title" value="<%= software.feature2title %>">
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Feature 2 Description</label>
+              <textarea class="form-control" name="software[feature2description]" placeholder="Feature 2 Description" style="min-height:200px !important;"><%= software.feature2description %></textarea>
+            </fieldset>
+          </div>
+          <div class="col-sm-4">
+            <fieldset class="form-group">
+              <label>Feature 3 Image</label>
+              <input type="text" class="form-control" name="software[feature3img]" placeholder="Feature 3 Image URL" value="<%= software.feature3img %>">
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Feature 3 Title</label>
+              <input type="text" class="form-control" name="software[feature3title]" placeholder="Feature 3 Title" value="<%= software.feature3title %>">
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Feature 3 Description</label>
+              <textarea class="form-control" name="software[feature3description]" placeholder="Feature 3 Description" style="min-height:200px !important;"><%= software.feature3description %></textarea>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" style="padding:0px !important;">
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Platforms</label>
+              <textarea class="form-control" name="software[platforms]" placeholder="Platforms List (HTML format)" style="min-height:200px !important;"><%= software.platforms %></textarea>
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Product Requirements</label>
+              <textarea class="form-control" name="software[requirements]" placeholder="Product Requirements List (HTML format)" style="min-height:200px !important;"><%= software.requirements %></textarea>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" style="padding:0px !important;">
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Languages</label>
+              <textarea class="form-control" name="software[languages]" placeholder="Languages List (HTML format)" style="min-height:200px !important;"><%= software.languages %></textarea>
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Regions</label>
+              <textarea class="form-control" name="software[regions]" placeholder="Regions List (HTML format)" style="min-height:200px !important;"><%= software.regions %></textarea>
+            </fieldset>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block p-3">Update!</button>
+      </form>
+  </div>
+</div>
+<% include ../partials/footer-admin %>

@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-<% include ../partials/home-slider %>
+<% include ../components/home-slider %>
 <section id="software">
   <div class="container-fluid software-container">
     <div class="row">
@@ -10,7 +10,7 @@
         <h5>Marketing Depot</h5>
         <div class="row">
           <div class="col-sm-12 col-md-3 col-lg-3" style="padding-right: 20px !important; padding-left:0px !important;">
-            <a href="#" style="display:block;">
+            <a href="/probuilder" style="display:block;">
               <div class="col-12 software-box" style="background-image: url(images/pro-builder-grid-2.jpg) !important;">
               </div>
             </a>
@@ -41,7 +41,7 @@
     <h5>Coming Soon</h5>
     <div class="col-sm-12 col-md-3 col-lg-3" style="padding-right: 20px !important; padding-left:0px !important;">
       <a href="#">
-        <div class="col-12 software-box" style="background-image: url(https://www.marketingdepot.ca/wp-content/uploads/pro-builder-grid-2.jpg) !important;min-width:201px !important;">
+        <div class="col-12 software-box" style="background-image: url(images/pro-builder-grid-2.jpg) !important;min-width:201px !important;">
         </div>
       </a>
     </div>
@@ -60,64 +60,47 @@
       <div class="row">
         <div class="col-sm-12 col-md-8 col-lg-8">
           <h2 class="news-heading-both"><a href="https://marketingdepot.ca/news/"style="text-decoration: none !important;"><span class="top-news text-white">Top Stories</span><span class="view-all-news"> View all news &gt;</span></a></h2>
-            <a id="featured-news-home-top" href="#">
+          <% var top = posts.slice(-1);
+            top.reverse();
+            top.forEach(function(top){ %>
+          <% %>
+            <a id="featured-news-home-top" href="/news/<%= top.url_slug %>">
               <div class="card news-featured-card">
                 <div class="card-img-wrapper-top">
-                  <div class="card-img-top news-featured-card-img-top" style="background: url(https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/hy/HYTDURRX6SW41524611772802.jpg);" alt="Card image cap"></div>
+                  <div class="card-img-top news-featured-card-img-top" style="background: url(<%= top.image %>);" alt="Card image cap"></div>
                 </div>
                 <div class="card-body news-featured-card-body">
-                  <p class="card-title">News</p>
-                  <h4 class="card-text text-white">Pro Builder content and additional features</h4>
+                  <p class="card-title"><%= top.category %></p>
+                  <h4 class="card-text text-white"><%= top.title %></h4>
                   </br>
                   <button class="btn btn-primary" style="width:70%;">Learn More</button>
                 </div>
               </div>
             </a>
+            <% }); %>
           <div class="row" style="margin-top:20px !important;">
+            <% var bottom = posts.slice(-3);
+              bottom.reverse();
+              bottom.forEach(function(bottom){ %>
             <div class="col-sm-12 col-md-12 col-lg-4">
               <a id="featured-news-home-top" href="#">
                 <div class="card news-featured-card" style="width: 100%;">
                   <div class="card-img-wrapper-bottom">
-                    <div class="card-img-top news-card-img-top" style="background: url(https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/hy/HYTDURRX6SW41524611772802.jpg);" alt=""></div>
+                    <div class="card-img-top news-card-img-top" style="background: url(<%= bottom.image %>);" alt=""></div>
                   </div>
                   <div class="card-body secondary-card-body">
-                    <p class="card-title">Pro Builder</p>
-                    <h4 class="card-text text-white">Some quick example text to build on</h4>
+                    <p class="card-title"><%= bottom.category %></p>
+                    <h4 class="card-text text-white"><%= bottom.title %></h4>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-              <a id="featured-news-home-top" href="#">
-                <div class="card news-featured-card" style="width: 100%;">
-                  <div class="card-img-wrapper-bottom">
-                    <div class="card-img-top news-card-img-top" style="background: url(https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/hy/HYTDURRX6SW41524611772802.jpg);" alt=""></div>
-                  </div>
-                  <div class="card-body secondary-card-body">
-                    <p class="card-title">WatchTower</p>
-                    <h4 class="card-text text-white">New scanning SEO metrics</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-4">
-              <a id="featured-news-home-top" href="#">
-                <div class="card news-featured-card" style="width: 100%;">
-                  <div class="card-img-wrapper-bottom">
-                    <div class="card-img-top news-card-img-top" style="background: url(https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/hy/HYTDURRX6SW41524611772802.jpg);" alt=""></div>
-                  </div>
-                  <div class="card-body secondary-card-body">
-                    <p class="card-title">Pro Leads</p>
-                    <h4 class="card-text text-white">Updated email templates</h4>
-                  </div>
-                </div>
-              </a>
-            </div>
+            <% }); %>
           </div>
         </div>
         <div class="col-sm-12 col-md-8 col-lg-4">
           <h2 class="text-white">Upcoming Events</h2>
-          <% include ../partials/home-events-list %>
+          <% include ../components/home-events-list %>
         </div>
       </div>
     </div>

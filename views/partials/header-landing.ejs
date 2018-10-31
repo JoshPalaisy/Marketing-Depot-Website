@@ -1,0 +1,22 @@
+<% include ../partials/head %>
+<header>
+  <nav class="navbar landing-navbar" style="z-index: 1030 !important;">
+    <a class="navbar-brand landing-navbar-brand" href="/"><img src="/images/md-icon.png" width="35" height="35" alt=""></a>
+    <ul class="nav" style="float: left !important;margin-right: auto !important;">
+      <li class="nav-item"><a class="nav-link landing-menu" href="#">Software</a></li>
+      <li class="nav-item landing-menu"><a class="nav-link" href="/shop">Shop</a></li>
+      <li class="nav-item"><a class="nav-link landing-menu" href="/news">News</a></li>
+      <li class="nav-item"><a class="nav-link landing-menu" href="#">MD TV</a></li>
+    </ul>
+    <ul class="nav justify-content-end">
+      <% if(!currentUser){ %>
+      <li class="nav-item"><a class="nav-link account-menu" href="/register">Register</a></li>
+      <li class="nav-item"><a class="nav-link account-menu" href="/login">Login</a></li>
+      <% } else { %>
+      <li class="nav-item"><a class="nav-link account-menu" href="/logout">Logout</a></li>
+      <li class="nav-item"><a class="nav-link account-menu" href="#"><%= currentUser.first_name %></a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
+<body style="background:#191919 !important;">

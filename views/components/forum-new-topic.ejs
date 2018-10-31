@@ -1,0 +1,41 @@
+<div class="collapse" id="collapseNewTopic">
+  <div class="card card-body bg-dark" style="margin-top:1rem !important;margin-bottom: 1.5rem !important;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12" style="padding-top:2rem !important;padding-left:4rem !important;padding-right:4rem !important;padding-bottom:4rem !important;">
+          <h1 class="text-white">New Topic<button class="btn btn-primary btn-sm" style="margin-left:10px;float:right;" type="button" data-toggle="collapse" data-target="#collapseNewTopic" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-close"></i></button></h1></br>
+          <div class="row">
+            <div class="col-sm-3">
+              <h3><%= currentUser.first_name %></h3>
+            </div>
+            <div class="col-sm-9">
+              <form action="/forums/<%= forum.parent %>/<%= forum.id %>/topics" method="POST">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1" style="background:#410a89 !important;"><i class="fa fa-pencil text-white"></i></span>
+                  </div>
+                  <input type="text" class="form-control" style="font-size: 1.75rem !important;margin:0px !important;padding:1.5rem !important;" placeholder="Topic Title" aria-label="Topic Title" aria-describedby="basic-addon1" name="topic[title]">
+                </div>
+                <div class="form-group">
+                  <textarea style="width: 100% !important;" name="topic[text]" id="newTopic" cols="30" rows="10"></textarea>
+                </div>
+                <% if(currentUser.isAdmin === true){ %>
+                  <div class="form-group">
+                    <lable>Featured</lable>
+                    <input type="checkbox" name="topic[featured]" value="true">
+                  </div>
+                <% }; %>
+                <div class="p-2 d-inline-block">
+                  <button type="submit" class="btn btn-lg btn-primary p-3">Create Topic</a>
+                </div>
+                <div class="p-2 d-inline-block">
+                  <button type="button" data-toggle="collapse" data-target="#collapseNewTopic" aria-expanded="false" aria-controls="collapseExample" class="btn btn-lg btn-primary p-3">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

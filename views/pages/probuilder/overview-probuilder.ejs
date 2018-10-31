@@ -1,0 +1,130 @@
+<% include ../../partials/header-landing %>
+  <nav id="landing-nav" class="navbar bg-dark text-light container sticky-header" style="will-change: transform;padding:0px !important;background:rgba(0,0,0,.75) !important;z-index:5 !important;transition: transform .5s,-webkit-transform .5s;">
+    <a class="navbar-brand" href="/probuilder">
+      <img src="/images/Pro-Builder-Logo.png" class="d-inline-block align-top sticky-logo" alt="">
+    </a>
+    <ul class="nav" style="float: left !important;margin-right: auto !important; margin-left:375px !important;">
+      <li class="nav-item active"><a class="nav-link main-menu" href="/probuilder/overview">Overview</a></li>
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/media">Media</a></li>
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/news">News</a></li>
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/community">Community</a></li>
+    </ul>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link landing-nav-item" href="/register">Try Free</a>
+      </li>
+    </ul>
+  </nav>
+
+<section id="pb-overview-hero-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="pb-overview-container col-sm-12 text-center">
+        <div class="empty-space-80"></div>
+        <div class="overviewFeaturesIntro">
+          <h1 class="text-uppercase text-white">Software Overview</h1></br>
+          <p>Experience website development through an amazing desktop application, pre-made drag and drop blocks, and full source code access.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proBuilderBasics">
+  <div class="pb-basicsContainer container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div class="overviewIntro">
+          <h1 class="text-uppercase"><small>The basics</small></h1>
+          <h1 class="text-uppercase text-white">A guide to building professional websites</h1></br>
+        </div>
+        <img id="basicsStepsImg" src="https://static.starcraft2.com/dist/images/content/game-scene/img-basic-tiles-art-c76fde391890fd56ea5071c46ffa7ec7635cedb264d75f41ca1d32ebb02974fa6958e379416cefde0b8d47da98abca75868b0abeb16dcf50a7aa3e40094cb679.png" alt="">
+        <ul class="pbBasicsStepsUL text-left">
+          <li class="pbBasicsStepsList">
+            <h3 class="text-uppercase">Drag &amp; Drop your layout</h3>
+            <p>Put the description of step 1 here.</p>
+          </li>
+          <li class="pbBasicsStepsList">
+            <h3 class="text-uppercase">Customize your content</h3>
+            <p>Put the description of step 2 here.</p>
+          </li>
+          <li class="pbBasicsStepsList">
+            <h3 class="text-uppercase">Publish to your server</h3>
+            <p>Put the description of step 3 here.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pb-basicsContainer container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div class="overviewIntro">
+          <h1 class="text-uppercase"><small>The basics</small></h1>
+          <h1 class="text-uppercase text-white">A guide to building professional websites</h1></br>
+          <p>Experience website development through an amazing desktop application, pre-made drag and drop blocks, and full source code access.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="proBuilderHowto">
+  <div class="pb-basicsContainer container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div class="overviewIntro">
+          <h1 class="text-uppercase"><small>The basics</small></h1>
+          <h1 class="text-uppercase text-white">A guide to building professional websites</h1></br>
+          <p>Experience website development through an amazing desktop application, pre-made drag and drop blocks, and full source code access.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="cta-proBuilder">
+  <div class="cta-container container-fluid p-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="empty-space-80"></div>
+        <h3 class="text-uppercase"><small>Ready to get started?</small></h3>
+        <h1 class="text-uppercase text-white">Get Pro Builder Now</h1></br>
+        <h3><i class="fa fa-windows"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-apple"></i>&nbsp;&nbsp;&nbsp;&nbsp;<small><a href="#" class="cta-systemRequirments">View System Requirements  →</a></small></h3></br>
+        <div class="p-2 d-inline-block">
+          <a href="/shop/checkout/pay/5aeb928ca8da92572fbeb35c" class="btn btn-lg btn-primary p-3">Try Free Now</a>
+        </div>
+        <div class="p-2 d-inline-block">
+          <a href="/shop/product/pro-builder" class="btn btn-lg btn-primary p-3">Go to Shop</a>
+        </div>
+        <div class="empty-space-80"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+window.onscroll = function() {getStuck()};
+
+var header = document.getElementById("landing-nav");
+var sticky = header.offsetTop;
+
+function getStuck() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky-top");
+    header.classList.add("container-fluid");
+    header.classList.remove("sticky-header");
+    header.classList.remove("container");
+  } else {
+    header.classList.remove("sticky-top");
+    header.classList.remove("container-fluid");
+    header.classList.add("container");
+    header.classList.add("sticky-header");
+  }
+}
+</script>
+<% include ../../partials/landing-footer %>

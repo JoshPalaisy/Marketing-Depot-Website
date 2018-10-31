@@ -1,0 +1,13 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+
+<div class="container-fluid" style="padding-left: 16rem !important;">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1><%= user.first_name %> <%= user.last_name %></h1>
+      <h2>Email:  <%= user.email %></h2>
+      <h2>Stripe ID: <%= user.stripeID %></h2>
+    </div>
+  </div>
+</div>
+<% include ../partials/footer-admin %>

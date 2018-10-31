@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+<section class="container-fluid" id="forum" style="padding:0px !important;">
+  <div class="container" style="padding-top:4rem !important;padding-left:4rem !important;padding-right:4rem !important;padding-bottom:0px !important;">
+    <h1 class="text-white"><%= forum.title %><button class="btn btn-primary btn-lg" style="margin-left:10px;float:right;" type="button" data-toggle="collapse" data-target="#collapseNewTopic" aria-expanded="false" aria-controls="collapseExample">New Topic</button></h1></br>
+  </div>
+  <% include ../components/forum-new-topic %>
+  <div class="container" style="padding-top:0px !important;padding-left:4rem !important;padding-right:4rem !important;padding-bottom:4rem !important;">
+    <div class="container" style="padding: 0px !important;">
+      <div id="featuredTopics" class="row">
+        <% forum.topics.forEach(function(topics){
+          if(topics.featured === "true"){ %>
+            <a href="#" class="featured-topic-card col-sm-12 col-md-12 col-lg-12" style="display: inline-flex !important;border-top: 1px solid rgba(255,255,255,.25) !important;border-bottom: 1px solid rgba(255,255,255,.25) !important;padding: 0px !important;text-decoration: none !important;">
+              <div>
+                <img class="card-img-top" src="/images/md-icon.png" alt="Card image cap" style="width: 40px !important; height: 40px !important;margin: .5rem !important;">
+              </div>
+              <div class="p-2" style="width: 50%;max-height: 3.5rem !important;">
+                <p style="font-size: 1.0625rem !important;font-weight:500 !important;padding:.45rem !important;">Welcome to the customer support forum!&nbsp;&nbsp;<i class="fa fa-lock"></i></p>
+              </div>
+              <div class="p-3" style="width: 25%;max-height: 3.5rem !important;">
+                <p class="text-center"><strong>John Doe</strong></p>
+              </div>
+              <div class="p-3" style="width: 25%;max-height: 3.5rem !important;">
+                <p style="float:right !important;"><strong>Jun 26, 2018</strong></p>
+              </div>
+            </a>
+        <% }}); %>
+      </div>
+      <div id="topics" class="row" style="margin-top: 3rem !important;">
+        <% forum.topics.forEach(function(topics){
+          if(topics.featured === "false"){ %>
+            <a href="#" class="topic-card col-sm-12 col-md-12 col-lg-12" style="display: inline-flex !important;border-top: 1px solid rgba(255,255,255,.25) !important;border-bottom: 1px solid rgba(255,255,255,.25) !important;padding: 0px !important;text-decoration: none !important;">
+              <div>
+                <img class="card-img-top" src="/images/md-icon.png" alt="Card image cap" style="width: 40px !important; height: 40px !important;margin: .5rem !important;">
+              </div>
+              <div class="p-2" style="width: 50%;max-height: 3.5rem !important;">
+                <p style="font-size: 1.0625rem !important;font-weight:500 !important;padding:.45rem !important;">Welcome to the customer support forum!</p>
+              </div>
+              <div class="p-3" style="width: 25%;max-height: 3.5rem !important;">
+                <p class="text-center"><strong>John Doe</strong></p>
+              </div>
+              <div class="p-3" style="width: 25%;max-height: 3.5rem !important;">
+                <p style="float:right !important;"><strong>Jun 26, 2018</strong></p>
+              </div>
+            </a>
+        <% }}); %>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center">
+    <p><small><span style="color: rgba(255,255,255,.5);">Thanks for using the </span>Marketing Depot Forums <span style="color: rgba(255,255,255,.5);">(1.0.2)</span></small></p>
+  </div>
+</section>
+<script type="text/javascript">
+  var editor = textboxio.replace('#newTopic');
+</script>
+<% include ../partials/main-footer.ejs %>

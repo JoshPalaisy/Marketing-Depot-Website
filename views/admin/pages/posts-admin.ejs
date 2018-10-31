@@ -1,0 +1,32 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+
+<div class="container" style="margin-left: 15rem !important;">
+  <div class="row">
+    <div class="col-sm-12 p-4">
+      <h1>View All Posts<a class="btn btn-primary btn-sm" style="margin-left:10px;" href="/admin/posts/new">Add New</a></h1></br>
+      <div class="ui middle aligned divided list">
+        <% var recentPost = posts.reverse();
+           recentPost.forEach(function(recentPost){ %>
+        <div class="item bg-light m-1 p-2">
+          <div class="right floated content">
+            <form class="ui" action="/admin/posts/destroy/<%= recentPost.id %>?_method=DELETE" method="POST" style="display:inline-flex !important;">
+              <button class="ui button red">Delete</button>
+            </form>
+            <a href="/admin/posts/edit/<%= recentPost.id %>">
+              <div class="ui button yellow">Edit</div>
+            </a>
+            <a target="_blank" href="/news/<%= recentPost.url_slug %>">
+              <div class="ui button violet">View</div>
+            </a>
+          </div>
+          <img class="ui tiny image" src="<%= recentPost.image %>">
+          <div class="content"><%= recentPost.title %><p>Link: <a class="text-dark" href="/news/<%= recentPost.url_slug %>">www.marketingdepot.ca/news/<%= recentPost.url_slug %></a></p></div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer-admin %>

@@ -1,0 +1,33 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+
+<div class="container" style="margin-left: 15rem !important;">
+  <div class="row">
+    <div class="col-sm-12 p-4">
+      <h1>Users<a class="btn btn-primary btn-sm" style="margin-left:10px;" href="/admin/users/new">Add New</a></h1></br>
+      <div class="ui middle aligned divided list">
+        <% var allUsers = users.reverse();
+           allUsers.forEach(function(allUsers){ %>
+        <div class="item bg-light m-1 p-2">
+          <div class="right floated content">
+            <form class="ui" action="/admin/users/destroy/<%= allUsers.id %>?_method=DELETE" method="POST" style="display:inline-flex !important;">
+              <button class="ui button red">Delete</button>
+            </form>
+            <a href="/admin/users/edit/<%= allUsers.id %>">
+              <div class="ui button yellow">Edit</div>
+            </a>
+            <a target="_blank" href="/admin/users/<%= allUsers.id %>">
+              <div class="ui button violet">View</div>
+            </a>
+          </div>
+          <img class="ui avatar image" src="/images/user-avatar.png">
+          <div class="content"><%= allUsers.first_name %> <%= allUsers.last_name %>
+            <p>Email: <a class="text-dark" href="mailto:<%= allUsers.email %>"><%= allUsers.email %></a></p></div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer-admin %>

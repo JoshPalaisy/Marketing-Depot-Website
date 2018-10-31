@@ -1,0 +1,16 @@
+<% var recentPost = posts.reverse();
+   recentPost.forEach(function(recentPost){ %>
+<div class="col-sm-12 recent-news-list">
+  <a id="recent-news-item" href="/news/<%= recentPost.url_slug %>" style="height: auto !important;">
+    <div class="col-sm-4" style="padding: 20px; height: auto !important;">
+      <div style="overflow: hidden !important; background-size: cover !important; background: url(<%= recentPost.image %>) center center no-repeat !important; height: 122.5px !important; width: 100% !important;" alt=""></div>
+    </div>
+    <div class="col-sm-8" style="padding: 20px;height: auto !important">
+      <p style="margin-bottom:5px;"><%= recentPost.category %></p>
+      <h4 class="text-white"><%= recentPost.title %></h4>
+      <p style="margin-bottom:5px;"><%= recentPost.description.substring(0, 85) %></p>
+      <p style="margin-bottom:5px;"><small><%= recentPost.date.toDateString() %></small></p>
+    </div>
+  </a>
+</div>
+<% }); %>

@@ -14,12 +14,6 @@
           <%- post.content %>
         </div>
         <div class="empty-space-20"></div>
-        <div class="col-sm-12 col-md-12 col-lg-12" style="display: inline-flex !important;">
-          <a class="btn btn-primary" href="/news/<%= post._id %>/edit" style="margin:5px !important;width: 100px !important;">Edit</a>
-          <form id="delete" action="/news/<%= post._id %>?_method=DELETE" method="POST" style="margin:5px !important;width: 100px !important;">
-            <button class="btn btn-primary" style="width: 100px !important;">Delete</button>
-          </form>
-        </div>
       </div>
       <% include ../partials/news-sidebar %>
     </div>

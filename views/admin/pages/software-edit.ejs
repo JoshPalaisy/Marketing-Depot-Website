@@ -1,0 +1,186 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+<div class="container-fluid" style="padding-left: 16rem !important;">
+  <form action="/admin/product/software/edit/<%= software.id %>?_method=PUT" method="POST">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="empty-space-20"></div>
+      <h1>Edit Software<a class="btn btn-primary btn-sm" style="margin-left:10px;" href="/admin/add-software">Add New</a></h1>
+      <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %>
+      <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert"><%= success %>  <a class="text-dark" style="text-decoration: underline !important;font-weight: 600 !important;" href="/shop/product/<%= software.url_slug %>" target="_blank">View Product</a></div>
+      <% } %>
+    </div>
+    <div class="col-sm-9" style="padding: 0px !important;">
+        <fieldset class="form-group">
+          <input class="form-control" type="text" maxlength="60" name="software[name]" placeholder="Software Name" value="<%= software.name %>" style="height:50px !important;font-size:22px !important;">
+        </fieldset>
+        <div class="ui fluid labeled input" style="margin-left:1rem !important;margin-right:1rem !important;">
+          <div class="ui label" style="border: none !important;">
+            http://marketingdepot.ca/shop/product/
+          </div>
+          <input type="text" name="software[url_slug]" placeholder="url-slug-here" style="border: none !important;" value="<%= software.url_slug %>">
+        </div></br>
+        <div class="row" style="min-height:500px !important;">
+          <div class="col-3 bg-dark software-admin-tabs">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-general-tab" data-toggle="pill" href="#v-pills-general" role="tab" aria-controls="v-pills-general" aria-selected="true">General</a>
+              <a class="nav-link" id="v-pills-images-tab" data-toggle="pill" href="#v-pills-images" role="tab" aria-controls="v-pills-images" aria-selected="false">Images</a>
+              <a class="nav-link" id="v-pills-description-tab" data-toggle="pill" href="#v-pills-description" role="tab" aria-controls="v-pills-description" aria-selected="false">Description</a>
+              <a class="nav-link" id="v-pills-features-tab" data-toggle="pill" href="#v-pills-features" role="tab" aria-controls="v-pills-features" aria-selected="false">Features</a>
+            </div>
+          </div>
+          <div class="col-9 bg-light p-3">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-general" role="tabpanel" aria-labelledby="v-pills-general-tab">
+                <fieldset class="field-group">
+                  <lable>Price ($)/month</lable><input class="form-control" type="text" name="software[price]" value="<%= software.price %>">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label for="softwareCategories">Paid Product?</label>
+                  <select class="form-control" name="software[isPaid]" id="softwareCategories"  value="<%= software.isPaid %>">
+                    <option value="true">Paid Product</option>
+                    <option value="false">Free Product</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="tab-pane fade" id="v-pills-images" role="tabpanel" aria-labelledby="v-pills-images-tab">
+                <fieldset class="form-group">
+                  <label>Product Logo</label>
+                  <input class="form-control" type="text" name="software[logo]" placeholder="Product Logo (URL only)" value="<%= software.logo %>">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label>Product Icon</label>
+                  <input class="form-control" type="text" name="software[icon]" placeholder="Product Icon (URL only)" value="<%= software.icon %>">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label>Main Background</label>
+                  <input class="form-control" type="text" name="software[mainBg]" placeholder="Product Page Background Image (URL only)" value="<%= software.mainBg %>">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label>Checkout Background</label>
+                  <input class="form-control" type="text" name="software[checkoutBg]" placeholder="Checkout Page Product Image (URL only)" value="<%= software.checkoutBg %>">
+                </fieldset>
+              </div>
+              <div class="tab-pane fade" id="v-pills-description" role="tabpanel" aria-labelledby="v-pills-description-tab">
+                <fieldset class="form-group">
+                  <label>Title</label>
+                  <input class="form-control" type="text" name="software[descriptionTitle]" placeholder="Description Title" value="<%= software.descriptionTitle %>">
+                </fieldset>
+                <fieldset class="form-group">
+                  <label>Title</label>
+                  <textarea class="form-control new-post-description" name="software[description]" placeholder="Software Product Description"><%= software.description %></textarea></br>
+                </fieldset>
+              </div>
+              <div class="tab-pane fade" id="v-pills-features" role="tabpanel" aria-labelledby="v-pills-features-tab">
+                <fieldset class="form-group">
+                  <label>Feature Title</label>
+                  <input type="text" class="form-control" name="software[featureTitle]" placeholder="Feature Title" value="<%= software.featureTitle %>">
+                </fieldset>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" id="feature1-tab" data-toggle="tab" href="#feature1" role="tab" aria-controls="feature1" aria-selected="true">Feature 1</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" id="feature2-tab" data-toggle="tab" href="#feature2" role="tab" aria-controls="feature2" aria-selected="false">Feature 2</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" id="feature3-tab" data-toggle="tab" href="#feature3" role="tab" aria-controls="feature3" aria-selected="false">Feature 3</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="feature1" role="tabpanel" aria-labelledby="feature1-tab">
+                    <fieldset class="form-group">
+                      <label>Image</label>
+                      <input class="form-control" type="text" name="software[feature1img]" placeholder="Feature 1 (Image URL)" value="<%= software.feature1img %>">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label>Title</label>
+                      <input class="form-control" type="text" name="software[feature1title]" placeholder="Feature 1 Title" value="<%= software.feature1title %>">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label>Description</label>
+                      <textarea class="form-control new-post-description" name="software[feature1description]" placeholder="Feature 1 Description"><%= software.feature1description %></textarea></br>
+                    </fieldset>
+                  </div>
+                  <div class="tab-pane fade" id="feature2" role="tabpanel" aria-labelledby="feature2-tab">
+                    <fieldset class="form-group">
+                      <label>Image</label>
+                      <input class="form-control" type="text" name="software[feature2img]" placeholder="Feature 2 (Image URL)" value="<%= software.feature2img %>">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label>Title</label>
+                      <input class="form-control" type="text" name="software[feature2title]" placeholder="Feature 2 Title" value="<%= software.feature2title %>">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label>Description</label>
+                      <textarea class="form-control new-post-description" name="software[feature2description]" placeholder="Feature 2 Description"><%= software.feature2description %></textarea></br>
+                    </fieldset>
+                  </div>
+                  <div class="tab-pane fade" id="feature3" role="tabpanel" aria-labelledby="feature3-tab">
+                    <fieldset class="form-group">
+                      <label>Image</label>
+                      <input class="form-control" type="text" name="software[feature3img]" placeholder="Feature 3 (Image URL)" value="<%= software.feature3img %>">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label>Title</label>
+                      <input class="form-control" type="text" name="software[feature3title]" placeholder="Feature 3 Title" value="<%= software.feature3title %>">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label>Description</label>
+                      <textarea class="form-control new-post-description" name="software[feature3description]" placeholder="Feature 3 Description"><%= software.feature3description %></textarea></br>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></br>
+
+        <div class="row" style="padding:0px !important;">
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Platforms</label>
+              <textarea class="form-control" name="software[platforms]" placeholder="Platforms List (HTML format)" style="min-height:200px !important;"><%= software.platforms %></textarea>
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Product Requirements</label>
+              <textarea class="form-control" name="software[requirements]" placeholder="Product Requirements List (HTML format)" style="min-height:200px !important;"><%= software.requirements %></textarea>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" style="padding:0px !important;">
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Languages</label>
+              <textarea class="form-control" name="software[languages]" placeholder="Languages List (HTML format)" style="min-height:200px !important;"><%= software.languages %></textarea>
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <label>Regions</label>
+              <textarea class="form-control" name="software[regions]" placeholder="Regions List (HTML format)" style="min-height:200px !important;"><%= software.regions %></textarea>
+            </fieldset>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+      <fieldset>
+        <input class="btn btn-primary btn-block p-3" type="submit" value="Update">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="softwareCategories">Product Category</label>
+        <input class="form-control" type="text" name="software[category]" value="<%= software.category %>">
+      </fieldset>
+    </div>
+  </div>
+</form>
+</div>
+<script type="text/javascript">
+  var editor = textboxio.replace('#main-content');
+</script>
+<% include ../partials/footer-admin %>

@@ -1,0 +1,38 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+
+<div class="container" style="margin-left: 15rem !important;">
+  <div class="row">
+    <div class="col-sm-12 p-4">
+      <h1>View All Software<a class="btn btn-primary btn-sm" style="margin-left:10px;" href="/admin/add-software">Add New</a></h1></br>
+      <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %>
+      <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert"><%= success %></div>
+      <% } %>
+      <div class="ui middle aligned divided list">
+        <% var recentSoftware = software.reverse();
+           recentSoftware.forEach(function(recentSoftware){ %>
+        <div class="item bg-light m-1 p-2">
+          <div class="right floated content">
+            <form class="ui" action="/admin/product/software/<%= recentSoftware.id %>/destroy?_method=DELETE" method="POST" style="display:inline-flex !important;">
+              <button class="ui button red">Delete</button>
+            </form>
+            <a href="/admin/product/software/edit/<%= recentSoftware.id %>">
+              <div class="ui button yellow">Edit</div>
+            </a>
+            <a target="_blank" href="/shop/product/<%= recentSoftware.url_slug %>">
+              <div class="ui button violet">View</div>
+            </a>
+          </div>
+          <img class="ui tiny image" src="<%= recentSoftware.checkoutBg %>">
+          <div class="content"><%= recentSoftware.name %><p>Link: <a class="text-dark" href="/shop/product/<%= recentSoftware.url_slug %>">www.marketingdepot.ca/shop/product/<%= recentSoftware.url_slug %></a></p></div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer-admin %>

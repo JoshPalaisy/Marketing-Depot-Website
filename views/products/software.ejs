@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+<% include ../partials/product-top-nav %>
+<section id="main-productbanner">
+  <div id="product-banner" class="container-fluid product-banner-bg" style="background-image: url(<%= software.mainBg %>) !important;">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-8"></div>
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="empty-space-80"></div>
+        <img class="product-logo" src="<%= software.logo %>" alt="">
+        <div class="empty-space-20"></div>
+        <div class="empty-space-20"></div>
+        <div class="empty-space-20"></div>
+        <% include ../components/software-purchase-box %>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="main-product-description">
+  <% include ../components/software-description %>
+</section>
+<section id="main-product-features">
+  <% include ../components/software-features %>
+</section>
+<section id="main-product-detials">
+  <% include ../components/software-detials %>
+</section>
+<% include ../partials/main-footer %>

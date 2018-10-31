@@ -6,7 +6,13 @@
         <p>
           <img class="auth-logo" src="images/md-icon.png" height="100px !important"></img>
           </br>
-        <form action="/login" method="post">
+          <% if(success && success.length > 0){ %>
+          <div class="alert alert-success" role="alert"><%= success %></div>
+          <% } %>
+          <% if(error && error.length > 0){ %>
+          <div class="alert alert-danger" role="alert"><%= error %></div>
+          <% } %>
+          <form action="/login" method="post">
           <div class="form-group">
             <input class="form-control" type="text" name="username" id="username" placeholder="Email">
           </div>

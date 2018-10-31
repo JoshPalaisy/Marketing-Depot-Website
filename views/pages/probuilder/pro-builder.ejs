@@ -1,0 +1,111 @@
+<% include ../../partials/header-landing %>
+  <nav id="landing-nav" class="navbar bg-dark text-light container sticky-header" style="will-change: transform;padding:0px !important;background:rgba(0,0,0,.75) !important;z-index:5 !important;transition: transform .5s,-webkit-transform .5s;">
+    <a class="navbar-brand" href="/probuilder">
+      <img src="/images/Pro-Builder-Logo.png" class="d-inline-block align-top sticky-logo" alt="">
+    </a>
+    <ul class="nav" style="float: left !important;margin-right: auto !important; margin-left:375px !important;">
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/overview">Overview</a></li>
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/media">Media</a></li>
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/news">News</a></li>
+      <li class="nav-item"><a class="nav-link main-menu" href="/probuilder/community">Community</a></li>
+    </ul>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link landing-nav-item" href="/register">Try Free</a>
+      </li>
+    </ul>
+  </nav>
+
+<section id="hero-wrapper" style="padding-top: 230px !important;padding-bottom: calc(200px - 3.50203rem) !important;">
+  <div id="hero-video-bg" class="container-fluid" style="min-height:500px !important;position: absolute !important;padding:0px !important;top: 0px !important;">
+    <video id="hero-video-bg" class="container-fluid" style="z-index: -1 !important;min-height:500px !important;position: absolute !important;padding:0px !important;top: 0px !important;" src="/videos/21812118_1066706990098587_6735120671363301376_n.mp4" loop="loop" muted="muted" autoplay="autoplay" playsinline="true"></video>
+  </div>
+  <div class="container text-center" style="position: relative !important;">
+    <div class="featuresIntro">
+      <h1 class="text-uppercase"><small>The Ultimate</small></h1>
+      <h1 class="text-uppercase text-white">Website Building Software</h1></br>
+      <div class="p-2 d-inline-block">
+        <a href="/shop/checkout/pay/5aeb928ca8da92572fbeb35c" class="btn btn-lg btn-primary p-3">Try Free Now</a>
+      </div>
+      <div class="p-2 d-inline-block">
+        <a href="/shop/product/pro-builder" class="btn btn-lg btn-primary p-3">Go to Shop</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="howto-wrapper">
+  <div class="howto-wrapper container-fluid" style="background: url(/images/probuilder-landing-bg.jpg) top center no-repeat;background-size:cover !important;">
+    <div class="row">
+      <div class="howto-mainContent col-sm-12 text-center">
+        <h2 class="text-uppercase" style="margin-bottom: 820px;line-height:40px;">Experience website development software that redefined internet marketing. The internet is yours to conquer.</h2>
+        <div class="featuresIntro">
+          <h1 class="text-uppercase"><small>Features</small></h1>
+          <h1 class="text-uppercase text-white">Use it your way</h1></br>
+          <p>Experience website development through an amazing desktop application, pre-made drag and drop blocks, and full source code access.</p>
+        </div>
+      </div>
+    </div>
+    <% include ../../components/probuilder-featuresPanelMain %>
+  </div>
+</section>
+
+<section id="free-to-try" style="background: url(/images/probuilder-trial-bg.jpg) top center no-repeat;background-size:cover !important;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="howto-mainContent col-sm-12">
+        <div class="featuresIntro text-center">
+          <div class="empty-space-80"></div>
+          <h1 class="text-uppercase"><small>Get Started</small></h1>
+          <h1 class="text-uppercase text-white">2 week free trial</h1></br>
+          <p>Building professional landing pages, and websites has never been easier (see below) with <i><strong>Marketing Depot</strong></i> - <i><strong>Pro Builder</strong></i>. It's time to start doing things easier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../../components/probuilder-freetotryPanel %>
+</section>
+
+<section id="cta-proBuilder">
+  <div class="cta-container container-fluid p-5">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="empty-space-80"></div>
+        <h3 class="text-uppercase"><small>Ready to get started?</small></h3>
+        <h1 class="text-uppercase text-white">Get Pro Builder Now</h1></br>
+        <h3><i class="fa fa-windows"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-apple"></i>&nbsp;&nbsp;&nbsp;&nbsp;<small><a href="#" class="cta-systemRequirments">View System Requirements  →</a></small></h3></br>
+        <div class="p-2 d-inline-block">
+          <a href="/shop/checkout/pay/5aeb928ca8da92572fbeb35c" class="btn btn-lg btn-primary p-3">Try Free Now</a>
+        </div>
+        <div class="p-2 d-inline-block">
+          <a href="/shop/product/pro-builder" class="btn btn-lg btn-primary p-3">Go to Shop</a>
+        </div>
+        <div class="empty-space-80"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+window.onscroll = function() {getStuck()};
+
+var header = document.getElementById("landing-nav");
+var sticky = header.offsetTop;
+
+function getStuck() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky-top");
+    header.classList.add("container-fluid");
+    header.classList.remove("sticky-header");
+    header.classList.remove("container");
+  } else {
+    header.classList.remove("sticky-top");
+    header.classList.remove("container-fluid");
+    header.classList.add("container");
+    header.classList.add("sticky-header");
+  }
+}
+</script>
+<% include ../../partials/landing-footer %>

@@ -1,0 +1,17 @@
+<% var top = posts.slice(-4);
+  top.reverse();
+  top.forEach(function(top){ %>
+<div class="col-sm-12 col-md-6 col-lg-3">
+  <a id="featured-news-home-top" href="/news/<%= top.url_slug %>">
+    <div class="card news-featured-card" style="width: 100%;">
+      <div class="card-img-wrapper-bottom">
+        <div class="card-img-top news-card-img-top" style="background: url(<%= top.image %>);" alt=""></div>
+      </div>
+      <div class="card-body secondary-card-body">
+        <p class="card-title"><%= top.category %></p>
+        <h4 class="card-text text-white"><%= top.title.substring(0, 60) %></h4>
+      </div>
+    </div>
+  </a>
+</div>
+<% }); %>

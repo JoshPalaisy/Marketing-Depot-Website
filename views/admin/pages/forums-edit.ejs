@@ -1,0 +1,37 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+<div class="container-fluid" style="padding-left: 16rem !important;max-width:760px !important;margin: auto !important;">
+  <form action="/admin/forums/new" method="POST" class="p-5">
+    <h1 class="text-center">Add New Forum</h1>
+    <fieldset class="form-group">
+      <input class="form-control" type="text" placeholder="Name" name="forums[title]" value="<%= forums.title %>">
+    </fieldset>
+    <fieldset class="form-group">
+      <select class="form-control" name="forums[parent]" id="forumsParent"  value="<%= forums.parent %>">
+        <option value="probuilder">Pro Builder</option>
+        <option value="proleads">Pro Leads</option>
+        <option value="watchtower">WatchTower</option>
+        <option value="mdphones">MD Phones</option>
+      </select>
+    </fieldset>
+    <fieldset class="form-group">
+      <input class="form-control" type="text" placeholder="Icon Url" name="forums[icon]" value="<%= forums.icon %>">
+    </fieldset>
+    <fieldset class="form-group">
+      <input class="form-control" type="text" placeholder="Hero Image Url" name="forums[hero_image]" value="<%= forums.hero_image %>">
+    </fieldset>
+    <fieldset class="form-group">
+      <textarea class="form-control text-dark" style="min-height:50px !important;" name="forums[description]" lines="4"><%= forums.description %></textarea>
+    </fieldset>
+    <fieldset class="form-group">
+      <select class="form-control" name="forums[category]" id="forumsCategories" value="<%= forums.category %>">
+        <option value="Community">Community</option>
+        <option value="Support">Support</option>
+      </select>
+    </fieldset>
+    <fieldset class="form-group">
+      <button class="btn btn-block btn-primary p-3">Create New Forum</button>
+    </fieldset>
+  </form>
+</div>
+<% include ../partials/footer-admin %>

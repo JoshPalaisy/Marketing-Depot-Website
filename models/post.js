@@ -2,6 +2,11 @@ var mongoose = require("mongoose");
 
 var postSchema = new mongoose.Schema({
    title: String,
+   url_slug: String,
+   isFeatured: {
+     type: Boolean,
+     defualt: false,
+   },
    date: {
      type: Date,
      default: Date.now

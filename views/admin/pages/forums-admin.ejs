@@ -1,0 +1,38 @@
+<% include ../partials/header-admin %>
+<% include ../components/sidebar %>
+
+<div class="container" style="margin-left: 15rem !important;">
+  <div class="row">
+    <div class="col-sm-12 p-4">
+      <h1>Forums<a class="btn btn-primary btn-sm" style="margin-left:10px;" href="/admin/forums/new">Add New</a></h1></br>
+      <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %>
+      <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert"><%= success %></div>
+      <% } %>
+      <div class="ui middle aligned divided list">
+        <% var allForums = forums.reverse();
+           allForums.forEach(function(allForums){ %>
+        <div class="item bg-light m-1 p-2">
+          <div class="right floated content">
+            <form class="ui" action="/admin/forums/<%= allForums.id %>/destroy?_method=DELETE" method="POST" style="display:inline-flex !important;">
+              <button class="ui button red">Delete</button>
+            </form>
+            <a href="/admin/forums/edit/<%= allForums.id %>">
+              <div class="ui button yellow">Edit</div>
+            </a>
+            <a target="_blank" href="/admin/forums/<%= allForums.id %>">
+              <div class="ui button violet">Topics</div>
+            </a>
+          </div>
+          <img class="ui avatar image" src="<%= allForums.icon %>">
+          <div class="content"><%= allForums.parent %> >> <%= allForums.title %> > <%= allForums.description %></div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer-admin %>
