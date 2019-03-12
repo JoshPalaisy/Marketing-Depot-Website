@@ -29,8 +29,4 @@ router.post("/payment/:id", [middleware.isLoggedIn, middleware.subscriptionPayme
   res.send("you have made a payment!");
 });
 
-router.get("/dick", function(req, res){
-  request.get("https://www.mattcoatesmusic.com/wp-json/wp/v2/pages/4249");
-})
-
 module.exports = router;
